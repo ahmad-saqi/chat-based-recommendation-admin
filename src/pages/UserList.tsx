@@ -7,23 +7,18 @@ import { SetStateAction, useState, useRef, useEffect } from "react";
 import Modal from "../components/ui/Modal";
 import SignUp from "../components/SignUp";
 import { FaPlus } from "react-icons/fa";
- 
+
 const UserList = () => {
   const [page, setPage] = useState(1);
   const [open, setOpen] = useState(false);
   const [amount, setAmount] = useState(10);
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
-  const [isAllChecked, setIsAllChecked] = useState(false); // State for the header checkbox
-  const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
+  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [checkedUsers, setCheckedUsers] = useState<Record<number, boolean>>({});
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
- 
-  const toggleDropdown = (userId: number | SetStateAction<null>) => {
-    console.log("userId", userId);
-    // if (dropdownOpen === userId) {
-    //   setDropdownOpen(null);
-    // } else {
-    //   setDropdownOpen(userId);
-    // }
+  const toggleDropdown = (userId: number | null) => {
+    setDropdownOpen((prev) => (prev === userId ? null : userId));
   };
 
   const handleDelete = (userId: number) => {
@@ -35,7 +30,20 @@ const UserList = () => {
   };
 
   const handleSelectAll = () => {
-    setIsAllChecked(!isAllChecked); // Toggle the state for the header checkbox
+    const newCheckedState = !isAllChecked;
+    setIsAllChecked(newCheckedState);
+    const newCheckedUsers = users.reduce((acc, user) => {
+      acc[user.id] = newCheckedState;
+      return acc;
+    }, {} as Record<number, boolean>);
+    setCheckedUsers(newCheckedUsers);
+  };
+
+  const handleIndividualCheck = (userId: number) => {
+    setCheckedUsers((prev) => ({
+      ...prev,
+      [userId]: !prev[userId],
+    }));
   };
 
   // Handle click outside of dropdown to close it
@@ -53,7 +61,7 @@ const UserList = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const totalPages = Math.ceil(users.length / amount); // Calculate total pages
+  const totalPages = Math.ceil(users.length / amount);
 
   // Calculate page numbers to display
   const getPageNumbers = () => {
@@ -61,11 +69,9 @@ const UserList = () => {
     let end = Math.min(totalPages, page + 2);
 
     if (totalPages <= 5) {
-      // If total pages are less than or equal to 5, show all pages
       start = 1;
       end = totalPages;
     } else {
-      // Adjust the start and end for edge cases
       if (page < 3) {
         end = 5;
       } else if (page > totalPages - 2) {
@@ -103,8 +109,8 @@ const UserList = () => {
                       <input
                         type="checkbox"
                         className="size-4"
-                        checked={isAllChecked} // Bind to state
-                        onChange={handleSelectAll} // Handle select all toggle
+                        checked={isAllChecked}
+                        onChange={handleSelectAll}
                       />
                     </td>
                     <td className="px-6 font-medium text-sm">
@@ -135,7 +141,8 @@ const UserList = () => {
                           <input
                             type="checkbox"
                             className="size-4"
-                            checked={isAllChecked} // All row checkboxes are controlled by the header checkbox
+                            checked={!!checkedUsers[user.id]}
+                            onChange={() => handleIndividualCheck(user.id)}
                           />
                         </td>
                         <td className="px-6 font-medium text-sm">
@@ -148,9 +155,7 @@ const UserList = () => {
                           </Link>
                         </td>
                         <td className="px-6 font-medium text-sm">
-                          <span>
-                            {user.name}
-                          </span>
+                          <span>{user.name}</span>
                         </td>
                         <td className="px-6 font-medium text-sm">
                           <span>{user.contact}</span>

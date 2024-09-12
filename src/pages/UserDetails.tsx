@@ -31,7 +31,7 @@ const UserDetails = () => {
             <img
               src={profileimg}
               alt="profile"
-              className="size-20 rounded-full absolute top-10 left-5"
+              className="size-20 rounded-full absolute top-10 left-5 "
             />
           </div>
         </div>
