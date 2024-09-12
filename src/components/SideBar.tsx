@@ -14,10 +14,12 @@ const SideBar = () => {
           <span>Create New Chatbot</span>
           <FaPlus className="size-4" />
         </button>
-        <div className="w-full flex items-center justify-start gap-5">
-          <MdOutlineHome className="size-5" />
-          <p className="font-bold text-lg text-gray-700">User</p>
-        </div>
+        <Link to="/">
+          <div className="w-full flex items-center justify-start gap-5">
+            <MdOutlineHome className="size-5" />
+            <p className="font-bold text-lg text-gray-700">User</p>
+          </div>
+        </Link>
       </div>
       {/* <div className="w-full h-24 border-b-2 flex items-center justify-center font-bold text-xl">
         NAME
