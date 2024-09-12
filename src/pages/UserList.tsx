@@ -17,6 +17,7 @@ const UserList = () => {
   const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
 
   const toggleDropdown = (userId: number | SetStateAction<null>) => {
+    console.log("userId", userId);
     // if (dropdownOpen === userId) {
     //   setDropdownOpen(null);
     // } else {
