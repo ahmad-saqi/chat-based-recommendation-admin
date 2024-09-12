@@ -17,11 +17,11 @@ const UserList = () => {
   const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
 
   const toggleDropdown = (userId: number | SetStateAction<null>) => {
-    if (dropdownOpen === userId) {
-      setDropdownOpen(null);
-    } else {
-      setDropdownOpen(userId);
-    }
+    // if (dropdownOpen === userId) {
+    //   setDropdownOpen(null);
+    // } else {
+    //   setDropdownOpen(userId);
+    // }
   };
 
   const handleDelete = (userId: number) => {
