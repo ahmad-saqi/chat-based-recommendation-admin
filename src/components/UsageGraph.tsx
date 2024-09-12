@@ -110,7 +110,7 @@ const UsageGraph = () => {
           <YAxis domain={[0, 1]} />
           <Tooltip />
           <Bar dataKey="usage" radius={[30, 30, 30, 30]}>
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={
