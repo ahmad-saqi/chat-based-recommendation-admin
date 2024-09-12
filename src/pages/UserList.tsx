@@ -85,7 +85,7 @@ const UserList = () => {
   return (
     <GlobalLayout>
       <div className="w-full h-full flex flex-col items-start justify-start">
-        <div className="w-full flex items-center justify-between p-2.5">
+        <div className="w-full flex items-center justify-between p-2.5 px-7">
           <h1 className="text-3xl font-semibold text-black">User List</h1>
           <button
             type="button"

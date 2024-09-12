@@ -1,5 +1,5 @@
-import { FaPlus } from "react-icons/fa";
-import { MdOutlineHome } from "react-icons/md";
+
+import { GoHomeFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
@@ -10,13 +10,10 @@ const SideBar = () => {
         </Link>
       </div>
       <div className="w-full p-2.5 flex flex-col items-start justify-start gap-2.5 max-h-full overflow-auto">
-        <button className="w-full h-12 py-2.5 px-5 bg-primary text-white text-sm font-bold flex items-center gap-2 rounded-lg justify-center">
-          <span>Create New Chatbot</span>
-          <FaPlus className="size-4" />
-        </button>
+       
         <Link to="/">
-          <div className="w-full flex items-center justify-start gap-5">
-            <MdOutlineHome className="size-5" />
+          <div className="w-full flex items-center justify-start gap-5 ml-5">
+            <GoHomeFill  className="size-8" />
             <p className="font-bold text-lg text-gray-700">User</p>
           </div>
         </Link>

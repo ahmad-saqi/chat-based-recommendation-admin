@@ -27,7 +27,7 @@ const SignUp = ({
             <input
               type="text"
               placeholder="John Doe"
-              className="w-full p-2 bg-secondary rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
+              className="w-full p-2 bg-[#efefef] rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-1">
@@ -37,7 +37,7 @@ const SignUp = ({
             <input
               type="email"
               placeholder="email@email.com"
-              className="w-full p-2 bg-secondary rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
+              className="w-full p-2 bg-[#efefef] rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-1">
@@ -47,7 +47,7 @@ const SignUp = ({
             <input
               type="password"
               placeholder="*********"
-              className="w-full p-2 bg-secondary rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
+              className="w-full p-2 bg-[#efefef] rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-1">
@@ -57,13 +57,13 @@ const SignUp = ({
             <input
               type="password"
               placeholder="*********"
-              className="w-full p-2 bg-secondary rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
+              className="w-full p-2 bg-[#efefef] rounded-lg text-xs placeholder:text-gray-200 placeholder:text-xs"
             />
           </div>
           <div className="w-full flex items-center justify-end gap-4">
             <button
               type="button"
-              className="py-1.5 px-4 rounded-lg bg-secondary text-black font-medium"
+              className="py-1.5 px-4 rounded-lg bg-[#efefef] text-black font-medium"
               onClick={() => setOpen(false)}
             >
               Cancel

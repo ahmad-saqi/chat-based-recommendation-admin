@@ -22,7 +22,7 @@ const UserDetails = () => {
                   <button className="bg-primary text-white py-2 px-4 rounded-lg">
                     Reset Password
                   </button>
-                  <button className="bg-secondary py-2 px-4 rounded-lg">
+                  <button className="bg-[#efefef] py-2 px-4 rounded-lg">
                     Deactivate
                   </button>
                 </div>
