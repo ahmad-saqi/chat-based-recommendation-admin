@@ -1,11 +1,13 @@
 import { FaPlus } from "react-icons/fa";
 import { MdOutlineHome } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <div className="w-60 h-full flex flex-col items-start justify-start ">
       <div className="w-full h-16 flex items-center justify-center border-b sticky top-0 bg-white">
-        <h1 className="text-3xl font-bold">Chatbot</h1>
+        <Link to="/">
+          <h1 className="text-3xl font-bold">Chatbot</h1>
+        </Link>
       </div>
       <div className="w-full p-2.5 flex flex-col items-start justify-start gap-2.5 max-h-full overflow-auto">
         <button className="w-full h-12 py-2.5 px-5 bg-primary text-white text-sm font-bold flex items-center gap-2 rounded-lg justify-center">
