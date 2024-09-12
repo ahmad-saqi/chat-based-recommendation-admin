@@ -7,7 +7,7 @@ import { SetStateAction, useState, useRef, useEffect } from "react";
 import Modal from "../components/ui/Modal";
 import SignUp from "../components/SignUp";
 import { FaPlus } from "react-icons/fa";
-
+ 
 const UserList = () => {
   const [page, setPage] = useState(1);
   const [open, setOpen] = useState(false);
@@ -16,6 +16,7 @@ const UserList = () => {
   const [isAllChecked, setIsAllChecked] = useState(false); // State for the header checkbox
   const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
 
+ 
   const toggleDropdown = (userId: number | SetStateAction<null>) => {
     console.log("userId", userId);
     // if (dropdownOpen === userId) {
@@ -148,7 +149,7 @@ const UserList = () => {
                         </td>
                         <td className="px-6 font-medium text-sm">
                           <span>
-                            {user.name} ({user.id})
+                            {user.name}
                           </span>
                         </td>
                         <td className="px-6 font-medium text-sm">
