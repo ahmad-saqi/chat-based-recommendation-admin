@@ -15,7 +15,7 @@ const UserList = () => {
   const [dropdownOpen, setDropdownOpen] = useState<number | null>(null);
   const [isAllChecked, setIsAllChecked] = useState(false); // State for the header checkbox
   const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown
-//
+
   const toggleDropdown = (userId: number) => {
     console.log('')
     // setDropdownOpen((prev) => (prev === userId ? null : userId));
