@@ -3,7 +3,7 @@ import { users } from "../lib/data/userList";
 import GlobalLayout from "../components/GlobalLayout";
 import { cn } from "../lib/utils";
 import { Link } from "react-router-dom";
-import { SetStateAction, useState, useRef, useEffect } from "react";
+import {  useState, useRef, useEffect } from "react";
 import Modal from "../components/ui/Modal";
 import SignUp from "../components/SignUp";
 import { FaPlus } from "react-icons/fa";
@@ -215,12 +215,21 @@ const UserList = () => {
 
           <div className="flex-1 flex items-center justify-end">
             Display
-            <input
+            {/* <input
               className="w-8 bg-gray-300 mr-10 ml-4"
               type="number"
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
-            />
+            /> */}
+            <select
+              className="bg-gray-300 mr-10 ml-4"
+              value={amount}
+              onChange={(e) => setAmount(Number(e.target.value))}
+            >
+              <option value={10}>10</option>
+              <option value={15}>15</option>
+              <option value={25}>25</option>
+            </select>
             {/* Backward Arrow: Disabled on first page */}
             <div
               onClick={() => page > 1 && setPage(page - 1)}

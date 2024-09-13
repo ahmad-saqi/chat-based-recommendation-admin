@@ -37,7 +37,7 @@ const UserDetails = () => {
         </div>
       </div>
 
-      {/* Reduce gap between sections */}
+     
       <div className="w-full px-5 bg-white">
         <UsageGraph />
       </div>
